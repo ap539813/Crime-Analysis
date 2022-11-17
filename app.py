@@ -2,7 +2,7 @@ import altair as alt
 import streamlit as st
 
 # importing the local modules
-from important_variables import css_file_path
+from assets import css_file_path
 from application_pages import main, homepage
 from add_style import local_css
 import tensorflow as tf

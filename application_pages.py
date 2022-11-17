@@ -1,23 +1,23 @@
 import streamlit as st
-from important_variables import theme_image_name, model_path_unet, model_path_encoder_decoder
-from prediction import segment_image
+from assets import theme_image_name, logistic_regression, decision_tree, standerdscaler
+from prediction import make_prediction
+from visualization import show
 
 def main():
     st.sidebar.image(theme_image_name)
 
     st.sidebar.title("Control Panel")
 
-    type_model = st.sidebar.radio("Select Type of Model: ", ('Data Visualization', 'Model 1', 'Model 2'))
+    type_model = st.sidebar.radio("Select Type of Model: ", ('Data Visualization', 'Logistic Regression', 'Model 2'))
 
-    if type_model == 'Unet Model':
-        st.title(f"Bone fracture localization using {type_model}")
+    if type_model == 'Data Visualization':
+        st.title(f"Data Visualization")
+        show()
 
-        segment_image(model_path_unet)
+    elif type_model == 'Logistic Regression':
+        st.title(f"Major Crime Classification Using {type_model}")
 
-    elif type_model == 'Simple Encoder Decoder':
-        st.title(f"Bone fracture localization using {type_model}")
-
-        segment_image(model_path_encoder_decoder)
+        make_prediction(logistic_regression)
 
     
 
