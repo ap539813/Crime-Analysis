@@ -2,6 +2,9 @@ logistic_regression = 'saved_models/LogisticRegression'
 decision_tree = 'saved_models/DecisionTreeClassifier'
 standerdscaler = 'saved_models/StandardScaler'
 onehotencoder = 'saved_models/OneHotEncoder'
+labelencoder = 'saved_models/LabelEncoder'
+dict_unique_mci_category = 'saved_models/dict_unique_mci_category'
+dict_unique_mci_category_invert = 'saved_models/dict_unique_mci_category_invert'
 
 theme_image_name = 'assets_files/Crime_homepage.png'
 column_names = ['Division', 'location_type', 'premises_type', 'ucr_code', 'ucr_ext',
@@ -39,6 +42,16 @@ mode_data = {'Division': 'D51',
             'Longitude': -79.51578755,
             'Latitude': 43.61208553}
 
+object_cols = ['Division',
+                'location_type',
+                'premises_type',
+                'offence',
+                'reportedmonth',
+                'reporteddayofweek',
+                'occurrencemonth',
+                'occurrencedayofweek',
+                'cleared',
+                'Neighbourhood']
 
 division = ['D31', 'D42', 'D22', 'D53', 'D51', 'D33', 'D14', 'D13', 'D11',
        'D12', 'D43', 'D32', 'D52', 'D54', 'D23', 'D55', 'D41', 'NSA']
