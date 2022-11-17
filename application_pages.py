@@ -1,5 +1,5 @@
 import streamlit as st
-from assets import theme_image_name, logistic_regression, decision_tree, standerdscaler
+from assets import theme_image_name, logistic_regression, decision_tree
 from prediction import make_prediction
 from visualization import show
 
@@ -8,7 +8,7 @@ def main():
 
     st.sidebar.title("Control Panel")
 
-    type_model = st.sidebar.radio("Select Type of Model: ", ('Data Visualization', 'Logistic Regression', 'Model 2'))
+    type_model = st.sidebar.radio("Select Type of Model: ", ('Data Visualization', 'Logistic Regression', 'Decision Tree Classifier'))
 
     if type_model == 'Data Visualization':
         st.title(f"Data Visualization")
@@ -16,8 +16,15 @@ def main():
 
     elif type_model == 'Logistic Regression':
         st.title(f"Major Crime Classification Using {type_model}")
+        st.write('**Please fill the values of different attributes asked below, some of the field are disabled on purpose, the values in those columns will be filled auromatically**')
 
         make_prediction(logistic_regression)
+
+    elif type_model == 'Decision Tree Classifier':
+        st.title(f"Major Crime Classification Using {type_model}")
+        st.write('**Please fill the values of different attributes asked below, some of the field are disabled on purpose, the values in those columns will be filled auromatically**')
+
+        make_prediction(decision_tree)
 
     
 
