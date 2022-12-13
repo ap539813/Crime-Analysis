@@ -1,2 +1,9 @@
 
 *.pyc
+ML_Models/DecisionTreeClassifier()
+ML_Models/LogisticRegression()
+ML_Models/MLPClassifier()
+ML_Models/RandomForestClassifier()
+ML_Models/SVC()
+saved_models/DecisionTreeClassifier
+saved_models/DecisionTreeClassifier
