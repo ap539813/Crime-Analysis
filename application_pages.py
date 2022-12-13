@@ -1,30 +1,27 @@
 import streamlit as st
-from assets import theme_image_name, logistic_regression, decision_tree
+from assets import theme_image_name, model_path
 from prediction import make_prediction
 from visualization import show
+import os
 
 def main():
     st.sidebar.image(theme_image_name)
 
     st.sidebar.title("Control Panel")
+    model_list = os.listdir(model_path)
 
-    type_model = st.sidebar.radio("Select Type of Model: ", ('Data Visualization', 'Logistic Regression', 'Decision Tree Classifier'))
+    type_model = st.sidebar.radio("Select Type of Model: ", ['Data Visualization'] + model_list)
 
     if type_model == 'Data Visualization':
         st.title(f"Data Visualization")
         show()
 
-    elif type_model == 'Logistic Regression':
-        st.title(f"Major Crime Classification Using {type_model}")
+    else:
+        st.title(f"Major Crime Classification Using {type_model.split('(')[0]}")
         st.write('**Please fill the values of different attributes asked below, some of the field are disabled on purpose, the values in those columns will be filled auromatically**')
 
-        make_prediction(logistic_regression)
+        make_prediction(model_path + type_model)
 
-    elif type_model == 'Decision Tree Classifier':
-        st.title(f"Major Crime Classification Using {type_model}")
-        st.write('**Please fill the values of different attributes asked below, some of the field are disabled on purpose, the values in those columns will be filled auromatically**')
-
-        make_prediction(decision_tree)
 
     
 

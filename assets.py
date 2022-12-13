@@ -1,5 +1,4 @@
-logistic_regression = 'saved_models/LogisticRegression'
-decision_tree = 'saved_models/DecisionTreeClassifier'
+model_path = 'ML_Models/'
 standerdscaler = 'saved_models/StandardScaler'
 onehotencoder = 'saved_models/OneHotEncoder'
 labelencoder = 'saved_models/LabelEncoder'
